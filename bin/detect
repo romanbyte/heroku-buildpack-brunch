@@ -1,15 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-if [ ! -d $1/vendor/node ]; then
-    echo "Node not installed" && exit 1
+# this pack is valid for apps with a hello.txt in the root
+if [ -f $1/brunch-config.js ]; then
+  echo "Brunch"
+  exit 0
+else
+  exit 1
 fi
-
-if [ ! -d $1/node_modules/brunch ]; then
-    echo "Brunch not installed. Add it to your package.json" && exit 1
-fi
-
-if [ -z "$(ls $1 | grep brunch-config)" ]; then
-    echo "No brunch config detected." && exit 1
-fi
-
-echo "Brunch" && exit 0
