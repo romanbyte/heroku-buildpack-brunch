@@ -26,4 +26,4 @@ fi
 BRUNCH_ENV=${BRUNCH_ENV:-"production"}
 
 status "Running brunch build --env $BRUNCH_ENV"
-$build_dir/node_modules/.bin/brunch build --env $BRUNCH_ENV
+$build_dir/node_modules/bin/brunch build --env $BRUNCH_ENV
